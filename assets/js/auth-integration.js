@@ -112,7 +112,7 @@ function initializeModalRecaptcha() {
             console.log('URL completa:', window.location.href);
             
             modalRecaptchaVerifier = new RecaptchaVerifier(auth, 'modalRecaptchaContainer', {
-                'size': 'invisible',
+                'size': 'normal',
                 'callback': (response) => {
                     console.log('Modal reCAPTCHA resolvido com sucesso');
                 },
