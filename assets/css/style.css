@@ -1,0 +1,600 @@
+/* Arquivo CSS principal - Doce Encanto */
+/* Importação de módulos CSS organizados por seção */
+
+/* Base - Reset e configurações gerais */
+@import url('./base.css');
+
+/* Header - Cabeçalho e logo */
+@import url('./header.css');
+
+/* Status - Indicador de funcionamento */
+@import url('./status.css');
+
+/* Menu - Categorias e itens do menu */
+@import url('./menu.css');
+
+/* Cart - Carrinho de compras */
+@import url('./cart.css');
+
+/* Modal - Modais de checkout e PIX */
+@import url('./modal.css');
+
+/* Footer - Rodapé */
+@import url('./footer.css');
+
+
+
+/* Authentication Styles */
+.user-auth-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.login-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 25px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    font-weight: 500;
+}
+
+.login-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.login-button i {
+    font-size: 1.1rem;
+}
+
+.user-info {
+    display: none;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.user-info.show {
+    display: flex;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.user-details {
+    flex: 1;
+}
+
+.user-phone {
+    color: white;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.btn-logout {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-logout:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Login Modal Styles */
+#loginModal .modal-content {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+#loginModal .modal-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 15px 15px 0 0;
+    border-bottom: none;
+    padding: 1.5rem;
+}
+
+#loginModal .modal-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+#loginModal .modal-title i {
+    margin-right: 0.5rem;
+}
+
+#loginModal .btn-close {
+    filter: invert(1);
+    opacity: 0.8;
+}
+
+#loginModal .btn-close:hover {
+    opacity: 1;
+}
+
+#loginModal .modal-body {
+    padding: 2rem;
+}
+
+#loginModal .form-label {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+#loginModal .form-control {
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+#loginModal .form-control:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+#loginModal .btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 10px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+#loginModal .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+#loginModal .btn-success {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    border: none;
+    border-radius: 10px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+#loginModal .btn-success:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
+}
+
+.verification-section {
+    border-top: 1px solid #e9ecef;
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+/* Responsive Design for Auth */
+@media (max-width: 768px) {
+    .user-auth-section {
+        margin-bottom: 15px;
+    }
+    
+    .login-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .user-info {
+        padding: 8px 15px;
+    }
+    
+    .user-avatar {
+        width: 35px;
+        height: 35px;
+        font-size: 0.8rem;
+    }
+    
+    .user-phone {
+        font-size: 0.8rem;
+    }
+    
+    .btn-logout {
+        padding: 6px 12px;
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-button span {
+        display: none;
+    }
+    
+    .user-info {
+        gap: 10px;
+    }
+    
+    .user-phone {
+        font-size: 0.75rem;
+    }
+}
+
+
+/* Order Confirmation Modal Styles */
+#orderConfirmationModal .modal-content {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+#orderConfirmationModal .modal-header {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    color: white;
+    border-radius: 15px 15px 0 0;
+    border-bottom: none;
+    padding: 1.5rem;
+}
+
+#orderConfirmationModal .modal-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+#orderConfirmationModal .modal-title i {
+    margin-right: 0.5rem;
+}
+
+#orderConfirmationModal .btn-close {
+    filter: invert(1);
+    opacity: 0.8;
+}
+
+#orderConfirmationModal .btn-close:hover {
+    opacity: 1;
+}
+
+#orderConfirmationModal .modal-body {
+    padding: 2rem;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.security-badge {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 15px;
+    padding: 1.5rem;
+    border: 2px solid #28a745;
+}
+
+.security-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+}
+
+.security-icon i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.order-details h6 {
+    color: #2c3e50;
+    font-weight: 600;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.customer-info {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 1rem;
+    border-left: 4px solid #28a745;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    padding: 0.25rem 0;
+}
+
+.info-row:last-child {
+    margin-bottom: 0;
+}
+
+.info-row .label {
+    font-weight: 600;
+    color: #495057;
+    flex: 0 0 auto;
+    margin-right: 1rem;
+}
+
+.info-row .label i {
+    width: 16px;
+    margin-right: 0.5rem;
+    color: #28a745;
+}
+
+.info-row .value {
+    color: #2c3e50;
+    text-align: right;
+    flex: 1;
+    word-break: break-word;
+}
+
+.order-items {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 1rem;
+    border-left: 4px solid #007bff;
+}
+
+.items-list {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.item-row:last-child {
+    border-bottom: none;
+}
+
+.item-name {
+    font-weight: 500;
+    color: #2c3e50;
+    flex: 1;
+}
+
+.item-quantity {
+    color: #6c757d;
+    margin: 0 1rem;
+    font-size: 0.9rem;
+}
+
+.item-price {
+    font-weight: 600;
+    color: #28a745;
+}
+
+.order-total {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 10px;
+    padding: 1rem;
+    border: 2px solid #28a745;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    padding: 0.25rem 0;
+}
+
+.total-row:last-child {
+    margin-bottom: 0;
+}
+
+.total-row .label {
+    font-weight: 500;
+    color: #495057;
+}
+
+.total-row .value {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.total-row.final-total {
+    border-top: 2px solid #28a745;
+    padding-top: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.total-row.final-total .label {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #28a745;
+}
+
+.total-row.final-total .value {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #28a745;
+}
+
+.confirmation-message .alert {
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(135deg, #d1ecf1 0%, #bee5eb 100%);
+    color: #0c5460;
+    border-left: 4px solid #17a2b8;
+}
+
+.confirmation-message .alert i {
+    margin-right: 0.5rem;
+    color: #17a2b8;
+}
+
+#orderConfirmationModal .modal-footer {
+    border-top: none;
+    padding: 1.5rem 2rem;
+    justify-content: space-between;
+}
+
+#orderConfirmationModal .btn-secondary {
+    background: #6c757d;
+    border: none;
+    border-radius: 10px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+#orderConfirmationModal .btn-secondary:hover {
+    background: #5a6268;
+    transform: translateY(-2px);
+}
+
+#orderConfirmationModal .btn-success {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    border: none;
+    border-radius: 10px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+#orderConfirmationModal .btn-success:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
+}
+
+/* Disabled state for checkout button */
+.checkout-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background: #6c757d !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.checkout-btn:disabled:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Login required message */
+.login-required-message {
+    background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+    border: 1px solid #ffc107;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem 0;
+    text-align: center;
+    color: #856404;
+}
+
+.login-required-message i {
+    color: #ffc107;
+    margin-right: 0.5rem;
+}
+
+.login-required-message .btn {
+    margin-top: 0.5rem;
+    background: linear-gradient(135deg, #ffc107 0%, #ffb300 100%);
+    border: none;
+    color: #212529;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.login-required-message .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 10px rgba(255, 193, 7, 0.4);
+}
+
+/* Responsive Design for Confirmation Modal */
+@media (max-width: 768px) {
+    #orderConfirmationModal .modal-dialog {
+        margin: 1rem;
+        max-width: none;
+    }
+    
+    #orderConfirmationModal .modal-body {
+        padding: 1.5rem;
+        max-height: 60vh;
+    }
+    
+    .security-badge {
+        padding: 1rem;
+    }
+    
+    .security-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .security-icon i {
+        font-size: 1.2rem;
+    }
+    
+    .info-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+    
+    .info-row .value {
+        text-align: left;
+    }
+    
+    .item-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+    
+    .item-quantity {
+        margin: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    #orderConfirmationModal .modal-body {
+        padding: 1rem;
+    }
+    
+    .total-row.final-total .label,
+    .total-row.final-total .value {
+        font-size: 1rem;
+    }
+}
+
